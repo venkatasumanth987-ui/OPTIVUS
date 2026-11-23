@@ -1,0 +1,98 @@
+/* OPTIVUS interactive inventory details and comparison charts */
+.detail-modal { width: min(850px, 100%); }
+.detail-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.detail-metric { min-width: 0; border: 1px solid #ede5e5; border-radius: 14px; background: linear-gradient(145deg, #fffaf7, #fff); padding: 16px 14px; }
+.detail-metric span { display: block; color: #8c8190; font-size: 11px; font-weight: 750; line-height: 1.4; }
+.detail-metric strong { display: block; margin-top: 8px; font-size: 24px; font-weight: 850; color: #63233f; overflow-wrap: anywhere; }
+.detail-metric small { display: block; margin-top: 3px; color: #968d95; font-size: 11px; }
+.detail-section { margin-top: 27px; }
+.detail-section h3 { margin: 0 0 13px; color: #29344a; font-size: 15px; }
+.detail-location-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.detail-location-grid > div { border: 1px solid #e8edf2; border-radius: 11px; padding: 13px; display: flex; align-items: center; justify-content: space-between; gap: 9px; font-size: 12px; }
+.detail-location-grid span { color: #788597; }
+.detail-location-grid strong { color: #29344a; white-space: nowrap; }
+.detail-table th { white-space: nowrap; }
+.detail-table td { font-size: 12px; }
+.detail-table-sub { display: block; margin-top: 4px; color: #8a94a2; }
+.detail-activity { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #eef0f3; }
+.detail-activity:last-child { border-bottom: 0; }
+.detail-activity .tag { flex: none; text-transform: capitalize; }
+.detail-activity strong { display: block; color: #28364b; font-size: 12px; line-height: 1.55; }
+.detail-activity small { display: block; margin-top: 4px; color: #8f99a4; font-size: 11px; }
+.detail-item-list > div { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 13px 0; border-bottom: 1px solid #edf0f3; }
+.detail-item-list > div:last-child { border: 0; }
+.detail-item-list small { display: block; color: #919baa; margin-top: 4px; }
+.detail-item-list strong { color: #283448; font-size: 12px; text-align: right; white-space: nowrap; }
+.detail-staff-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #edf0f3; }
+.detail-staff-row:last-child { border: 0; }
+.detail-staff-row small { display: block; color: #939dab; margin-top: 5px; }
+.detail-person { display: flex; align-items: center; gap: 14px; padding-bottom: 21px; }
+.detail-person-avatar { width: 62px; height: 62px; border-radius: 17px; display: grid; place-items: center; font-weight: 850; font-size: 19px; color: white; background: linear-gradient(135deg, #74203e, #d69c54); }
+.detail-person > div { flex: 1; }
+.detail-person > div strong { display: block; color: #192d43; font-size: 19px; }
+.detail-person > div span { display: block; margin-top: 5px; font-size: 13px; color: #8090a1; }
+.detail-entity-link { display: inline-flex; align-items: center; gap: 7px; border: 0; border-radius: 5px; padding: 2px 0; color: #762341; background: transparent; text-align: left; font-size: inherit; font-weight: 800; line-height: 1.4; cursor: pointer; }
+.detail-entity-link .ic { width: 13px; height: 13px; opacity: .55; }
+.detail-entity-link:hover { color: #ba7540; text-decoration: underline; text-underline-offset: 3px; }
+.detail-entity-link:focus-visible, .overview-dept-tile:focus-visible, .dept-card-open:focus-visible { outline: 3px solid #e6bd6d; outline-offset: 3px; }
+.overview-dept-tile { border: 1px solid #ede6e9; border-radius: 13px; background: linear-gradient(145deg, #fff, #fffaf8); padding: 17px; display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 7px; color: #2a3448; cursor: pointer; min-height: 173px; transition: border-color .18s, transform .18s, box-shadow .18s; }
+.overview-dept-tile:hover { border-color: #d9a85c; box-shadow: 0 9px 25px #6a294016; transform: translateY(-2px); }
+.overview-dept-tile strong { font-size: 14px; margin-top: 4px; }
+.overview-dept-tile small { font-size: 12px; color: #8490a0; }
+.overview-dept-open { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 11px; color: #8f3455; font-weight: 850; }
+.overview-dept-open .ic { width: 13px; height: 13px; }
+.dept-card { transition: border-color .18s, box-shadow .18s; }
+.dept-card:hover { border-color: #e0bd85; box-shadow: 0 10px 28px #6f304018; }
+.dept-card-open { display: block; width: 100%; padding: 0; text-align: left; background: transparent; border: 0; color: inherit; cursor: pointer; }
+.dept-view-prompt { display: inline-flex; align-items: center; gap: 7px; margin-top: 15px; color: #8d3557; font-size: 12px; font-weight: 800; }
+.dept-view-prompt .ic { width: 14px; height: 14px; }
+
+/* Multi-series consumption chart with a numbered y-axis. */
+.trend-graph { display: grid; grid-template-columns: 48px minmax(0, 1fr); min-width: 0; padding-top: 15px; }
+.trend-y-axis { height: 200px; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; padding-right: 9px; position: relative; color: #8d91a3; font-size: 11px; font-weight: 750; }
+.trend-y-axis small { position: absolute; top: -26px; right: 9px; color: #73324a; font-weight: 850; font-size: 11px; }
+.trend-plot-scroll { min-width: 0; overflow-x: auto; }
+.trend-chart { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0,1fr); gap: 11px; min-height: 235px; padding: 0 2px; background: repeating-linear-gradient(to bottom, #e8edf1 0, #e8edf1 1px, transparent 1px, transparent 50px); background-size: 100% 200px; background-repeat: no-repeat; }
+.trend-column { gap: 11px; }
+.trend-bar-space { height: 200px; justify-content: stretch; }
+.trend-bars { height: 100%; width: 100%; display: flex; justify-content: center; align-items: flex-end; gap: 2px; }
+.trend-bar, .trend-chart-30d .trend-bar { display: block; flex: 1; min-width: 2px; max-width: 23px; width: auto; height: var(--bar-h); border-radius: 4px 4px 0 0; background: var(--bar-color); transition: height .2s, filter .2s; }
+.trend-bar:hover, .trend-column:hover .trend-bar { background: var(--bar-color); filter: brightness(.9) saturate(1.2); }
+.trend-chart-7d { min-width: 510px; }
+.trend-chart-30d { min-width: 1150px; gap: 8px; }
+.trend-chart-12m { min-width: 750px; }
+.trend-chart-30d .trend-axis-label { font-size: 10px; }
+.trend-legend { display: flex; align-items: center; flex-wrap: wrap; gap: 9px 17px; padding-top: 11px; }
+.trend-legend span { display: inline-flex; align-items: center; gap: 6px; color: #7c8190; font-size: 11px; font-weight: 650; }
+.trend-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; }
+.trend-foot { padding-top: 14px; }
+
+@media (max-width: 700px) {
+  .detail-stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .detail-location-grid { grid-template-columns: 1fr; }
+  .detail-modal .modal-body { padding: 17px; }
+  .trend-graph { grid-template-columns: 41px minmax(0,1fr); }
+  .trend-y-axis { font-size: 10px; }
+}
+
+.optivus-mark { width: 1.65em; height: 1.65em; flex: none; }
+.reference-photo { display: block; border-radius: inherit; object-fit: cover; }
+.portrait-photo, .item-photo { width: 100%; height: 100%; }
+.item-photo { object-fit: contain; background: #fff; }
+.overview-dept-tile .department-photo, .dept-head .department-photo { width: 100%; max-width: 100%; height: 86px; border-radius: 9px; }
+.dept-head:has(.department-photo) { position: relative; }
+.dept-head:has(.department-photo) .tag { position: absolute; top: 7px; right: 7px; }
+.modal-head .equipment-detail, .modal-head .department-detail { width: clamp(72px,14vw,145px); height: 84px; border-radius: 10px; }
+.modal-head .equipment-detail { object-fit: contain; }
+.modal-head:has(.reference-photo) > div { flex: 1; align-self: center; }
+
+.pictured-item {display:inline-flex;align-items:center;gap:.55rem}
+.inline-item-photo {width:2.35rem;height:2.35rem;object-fit:contain;border-radius:.45rem;background:#f6f8f8;flex:none}
+.workspace-room {display:block;width:100%;aspect-ratio:1159/165;height:auto;min-height:96px;object-fit:cover;object-position:65% center;border-radius:14px;margin-bottom:1rem}
+.dept-head .department-photo {height:clamp(110px,10vw,150px)}
+.modal-head .equipment-detail {width:clamp(78px,16vw,165px);height:clamp(72px,12vw,120px);flex:none}
+.pictured-staff{display:inline-flex;align-items:center;gap:.4rem;vertical-align:middle}
+.staff-thumbnail{display:inline-grid;place-items:center;overflow:hidden;flex:none;width:1.65rem;height:1.65rem;border-radius:50%;background:#eef1f4;color:#394556;font-size:.7rem}
+
+.kpi-icon:has(.operation-photo), .quick-icon:has(.operation-photo){width:clamp(42px,4vw,56px);height:clamp(42px,4vw,56px);flex:none;overflow:hidden}
+.operation-photo{width:100%;height:100%;object-fit:cover}

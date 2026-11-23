@@ -1,0 +1,53 @@
+/* OPTIVUS refinements from annotated review: compact portals and period charts. */
+@media (min-width: 701px) {
+  .login-page { padding: 12px; }
+  .login-frame { zoom: .75; }
+  .login-left { padding-top: 24px; padding-bottom: 18px; }
+  .login-form-area { padding-top: 40px; }
+}
+
+.login-demo-options { max-height: 225px; overflow-y: auto; }
+.reset-confirmation-note { margin: 0 0 19px; color: #806b78; font-size: 14px; line-height: 1.6; }
+/* A quiet employee identity chip rather than a large form-like information panel. */
+.header-account { gap: 10px; max-width: 500px; padding: 8px 11px; border: 1px solid #e2e5eb; border-radius: 15px; background: #fff; box-shadow: 0 4px 18px #1b29400c; }
+.header-account-avatar { width: 39px; height: 39px; border-radius: 50%; background: linear-gradient(145deg,#7e173e,#c29453); box-shadow: none; }
+.header-account-person { gap: 4px; }
+.header-account-person > strong { font-size: 13px; }
+.header-account-person > span { font-size: 11px; }
+.header-account-designation { justify-content: center; margin-left: 6px; padding-left: 0; border-left: 0; }
+.header-account-designation strong { display: inline-block; max-width: 180px; padding: 7px 10px; border: 1px solid #efdcc4; border-radius: 9px; background: #fff6e9; color: #7f3150; font-size: 11px; line-height: 1.4; text-align: center; }
+
+.trend-range { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; padding: 4px; border: 1px solid #e9dfe0; border-radius: 11px; background: #f8f2f0; }
+.trend-range button { border: 0; border-radius: 7px; padding: 8px 11px; background: transparent; color: #806a76; font-size: 12px; font-weight: 800; white-space: nowrap; transition: background .16s, color .16s; }
+.trend-range button:hover { color: #752642; background: #f1e3e3; }
+.trend-range button.active { color: #fff; background: #801d42; box-shadow: 0 3px 8px #771a3d25; }
+.trend-inline-controls { display: flex; justify-content: flex-end; margin: -2px 0 14px; }
+.trend-chart { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0,1fr); gap: 7px; min-height: 235px; padding: 8px 2px 0; background: repeating-linear-gradient(to top, transparent, transparent 43px, #eef1f5 44px); background-size: 100% 202px; background-repeat: no-repeat; }
+.trend-column { display: flex; flex-direction: column; align-items: stretch; min-width: 0; gap: 11px; }
+.trend-bar-space { height: 200px; display: flex; align-items: flex-end; justify-content: center; border-bottom: 1px solid #e6ebef; }
+.trend-bar { display: block; width: min(30px,82%); height: var(--bar-h); border-radius: 7px 7px 0 0; background: linear-gradient(0deg,#a6525d,#e8b765); transition: height .2s ease; }
+.trend-column:hover .trend-bar { background: linear-gradient(0deg,#781a41,#d99c54); }
+.trend-axis-label { min-height: 19px; color: #8792a0; font-size: 11px; font-weight: 700; text-align: center; white-space: nowrap; }
+.trend-chart-30d { gap: 3px; }
+.trend-chart-30d .trend-bar { width: 80%; max-width: 16px; border-radius: 3px 3px 0 0; }
+.trend-chart-30d .trend-axis-label { font-size: 9px; }
+.trend-foot { display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 12px; color: #7d8997; font-size: 12px; }
+.trend-foot strong { color: #5f2744; font-weight: 800; }
+
+@media (max-width: 1100px) {
+  .panel-top:has(.trend-range) { flex-wrap: wrap; }
+}
+@media (max-width: 700px) {
+  .login-frame { zoom: 1; }
+  .login-demo-options { max-height: 190px; }
+  .trend-inline-controls { justify-content: flex-start; }
+  .trend-range button { padding: 8px 9px; }
+  .trend-chart { gap: 3px; }
+  .trend-chart-30d .trend-axis-label { font-size: 8px; }
+}
+@media (max-width: 425px) {
+  .header-account { gap: 7px; padding: 7px; }
+  .header-account-avatar { width: 35px; height: 35px; }
+  .header-account-designation { margin-left: auto; }
+  .header-account-designation strong { max-width: 118px; padding: 6px; font-size: 10px; }
+}

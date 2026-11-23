@@ -1,0 +1,46 @@
+/* A blue icon rail that expands back into the full role-specific menu. */
+.sidebar { transition: width .22s ease, flex-basis .22s ease, background .22s ease; }
+.side-brand { padding: 0 0 20px; }
+.side-brand-toggle { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; min-height: 44px; padding: 6px 10px; border: 1px solid transparent; border-radius: 12px; background: transparent; color: #fff; text-align: left; }
+.side-brand-toggle:hover { background: #173754; border-color: #2a5270; }
+.side-brand-toggle:focus-visible { outline: 3px solid #f1bd60; outline-offset: 2px; }
+.side-brand-toggle .brand { pointer-events: none; }
+.side-collapse-indicator { display: flex; align-items: center; color: #a5bed6; opacity: .85; }
+.sidebar.collapsed { width: 76px; flex: 0 0 76px; padding: 23px 11px 16px; overflow-x: hidden; background: linear-gradient(180deg,#082844 0%,#0b3156 48%,#061c36 100%); }
+.sidebar.collapsed .side-brand { padding: 0 0 22px; }
+.sidebar.collapsed .side-brand-toggle { justify-content: center; width: 54px; padding: 7px; }
+.sidebar.collapsed .side-brand .brand { gap: 0; }
+.sidebar.collapsed .side-brand .brand-mark { width: 37px; height: 37px; }
+.sidebar.collapsed .brand-name,
+.sidebar.collapsed .side-collapse-indicator,
+.sidebar.collapsed .side-label,
+.sidebar.collapsed .side-portal-badge strong,
+.sidebar.collapsed .side-link-label,
+.sidebar.collapsed .side-link .count,
+.sidebar.collapsed .side-person > span:last-child,
+.sidebar.collapsed .side-signout-label { display: none; }
+.sidebar.collapsed .side-portal-badge { width: 52px; height: 49px; justify-content: center; margin: 3px 0 22px; padding: 0; background: #164b78; border-color: #2e648e; color: #e9be67; }
+.sidebar.collapsed .side-menu { gap: 8px; }
+.sidebar.collapsed .side-link { width: 52px; height: 48px; justify-content: center; padding: 0; border-radius: 12px; }
+.sidebar.collapsed .side-link .ic { width: 22px; height: 22px; color: #c4def7; }
+.sidebar.collapsed .side-link:hover { background: #25577e; }
+.sidebar.collapsed .side-link.active { background: #e9b85d; }
+.sidebar.collapsed .side-link.active .ic { color: #0a2945; }
+.sidebar.collapsed .side-bottom { padding: 12px 0 4px; }
+.sidebar.collapsed .side-person { justify-content: center; padding: 4px 0 10px; }
+.sidebar.collapsed .side-person .avatar { width: 37px; height: 37px; }
+.sidebar.collapsed .side-signout { width: 52px; min-height: 44px; margin: 4px 0 0; padding: 0; }
+.sidebar.collapsed .side-signout .ic { width: 19px; height: 19px; }
+
+@media (max-width: 760px) {
+  .sidebar.collapsed { transform: translateX(0); width: 76px; }
+  .sidebar-compact .app-main { margin-left: 76px; min-width: 0; }
+  .sidebar-compact .mobile-menu { display: none; }
+  .sidebar-compact .app-header { padding-inline: 12px; }
+  .sidebar-compact .main-content { padding-inline: 12px; }
+  .sidebar.collapsed + .sidebar-scrim { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar { transition: none; }
+}

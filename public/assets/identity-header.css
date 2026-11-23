@@ -1,0 +1,25 @@
+/* Keep the signed-in person visible without exposing role or portal switches. */
+@media (max-width: 1120px) {
+  .header-account { gap: 9px; padding-right: 10px; }
+  .header-account-designation { padding-left: 11px; }
+  .header-account-designation strong { max-width: 165px; font-size: 12px; }
+  .header-account-person > span { font-size: 11px; }
+}
+
+@media (max-width: 760px) {
+  .app-header { height: auto; min-height: 86px; padding: 12px 17px; flex-wrap: wrap; gap: 10px; }
+  .app-header-left { flex: 1 1 100%; }
+  .header-utilities { flex: 1 1 100%; width: 100%; }
+  .header-account { width: 100%; max-width: none; }
+  .header-account-designation { margin-left: auto; }
+  .header-account-person > span { font-size: 12px; }
+}
+
+@media (max-width: 425px) {
+  .header-account-avatar { width: 35px; height: 35px; font-size: 12px; }
+  .header-account-person > strong { font-size: 12px; }
+  .header-account-person > span { font-size: 11px; white-space: normal; overflow-wrap: anywhere; max-width: 125px; }
+  .header-account-designation { padding-left: 9px; }
+  .header-account-designation strong { max-width: 125px; font-size: 11px; }
+  .header-account-designation small { font-size: 9px; }
+}
